@@ -392,7 +392,13 @@ object MiMa extends AutoPlugin {
       ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ddata.Replicator#ReadMajority.apply"),
       ProblemFilters.exclude[MissingTypesProblem]("akka.cluster.ddata.Replicator$WriteMajority$"),
       ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ddata.Replicator#WriteMajority.copy"),
-      ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ddata.Replicator#WriteMajority.apply")
+      ProblemFilters.exclude[DirectMissingMethodProblem]("akka.cluster.ddata.Replicator#WriteMajority.apply"),
+
+      // #22105 Akka Typed process DSL
+      ProblemFilters.exclude[DirectMissingMethodProblem]("akka.actor.ActorCell.addFunctionRef"),
+      ProblemFilters.exclude[DirectMissingMethodProblem]("akka.actor.dungeon.Children.addFunctionRef"),
+      ProblemFilters.exclude[ReversedMissingMethodProblem]("akka.actor.dungeon.Children.addFunctionRef"),
+      ProblemFilters.exclude[ReversedMissingMethodProblem]("akka.actor.dungeon.Children.addFunctionRef$default$2")
     )
 
     Map(
